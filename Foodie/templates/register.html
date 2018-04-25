@@ -6,7 +6,15 @@
 <p>You're logged in already!</p>
 {% else %}
  
- 
+<style>
+body  {
+    background-image: url("static/img/bb.jpg");
+    background-size: cover;
+}
+</style>
+
+<body>
+  <br><br><br><br>
 <form action="/register" method="POST">
   <div class="login">
     <div class="login-screen">
@@ -41,7 +49,7 @@
     </div>
   </div>
 </form>
- <br><br><br><br><br><br><br><br><br><br><br>
-
+ <br><br><br><br><br><br>
+</body>
 {% endif %}
 {% endblock %}
