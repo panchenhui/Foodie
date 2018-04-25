@@ -49,10 +49,10 @@ def register():
         password2 = request.form['password2']
         users = firebase_.get('/users', None)
         # firebase_.post('/users', username)
-        if(username in users):
-            users = firebase_.get('/users', None)
-        # firebase_.post('/users', username)
-            users = firebase_.get('/users', None)
+        # if(username in users):
+            # users = firebase_.get('/users', None)
+            # firebase_.post('/users', username)
+            # users = firebase_.get('/users', None)
         # firebase_.post('/users', username)
         if(username in users or password != password2):
             flash('username exits!')
@@ -107,10 +107,6 @@ def contact():
 def show_results():
 
     search = request.form['search']
-    user_id = session['username']
-
-    search = request.form['search'] 
-    user_id = session['username']
 
     if request.method == 'POST':
         data = down.data
@@ -121,7 +117,7 @@ def show_results():
         search_history.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 
-    return render_template('show_results.html',search= search, check= check,res_id=recom.pre_rate_recommend(user_id), data=down.data)
+    return render_template('show_results.html',search= search, check= check, data=data)
 
 @app.route('/show_history', methods = ['get','POST'])
 def show_history():
