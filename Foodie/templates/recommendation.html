@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}Recommendation{% endblock %}
+{% block body %}
+    <br><br>
+
+    <div class="container text-center " >
+        <form action="", method="POST">
+            <div class="form-group" >
+                <input type="text" class="form-control" id="" placeholder="The user id you want to recommend restaurants" name="user_id_submit">
+            </div>
+            <button type="submit" class="btn btn-default">See what you might like！！！</button>
+        </form>
+    </div>
+    <br>
+    <table class="table table-striped table-bordered order-column" id="dataTable" width="100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for business_id in res_id %}
+            <tr>
+            <td>{{ data[business_id]['name'] }}</td>
+            <td>{{ data[business_id]['avg_stars'] }}</td>
+            <td>{{ data[business_id]['categories'].replace('[','').replace(']','') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    
+{% endblock %}

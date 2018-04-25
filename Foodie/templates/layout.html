@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dataTables.bootstrap4.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/round-about.css')}}" />
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}" />
+    
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/grayscale.min.css')}}" /> -->
+    
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" /> -->
+    
+</head>
+
+<body background="static/img/4.jpg" style="background-size: cover">
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{{ url_for('index') }}">Foodie</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url_for('index') }}">Home</a>
+<!--             </li>
+              <a class="nav-link" href="{{ url_for('review') }}">Review</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for('recommendation') }}">Recommendation</a>
+            <li class="nav-item"> -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url_for('about') }}">About</a>
+            </li>
+
+            {% if session['logged_in'] %}
+            <!-- <a class="nav-link ">Welcome</a> -->
+            <li class="dropdown">
+              <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Account
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link ">{{session['username']}}</a></li>
+                <li><a class="nav-link " href="{{ url_for('show_history') }}">History</a></li>
+                <li><a class="nav-link " href="{{ url_for('logout') }}">Log out</a></li>
+              </ul>
+            </li>
+            {% else %}       
+
+            <li class="nav-item">
+              <a class="nav-link glyphicon glyphicon-user" href="{{ url_for('login') }}">Sign In</a>
+            </li>
+
+            {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="masthead">
+      <!-- <div class="intro-body"> -->
+        <div class="container">
+          <!-- <div class="row"> -->
+            <div class="col-lg-12 mx-auto">
+              <!-- <h1 class="brand-heading">Foodie</h1> -->
+              <!-- <p class="intro-text">A free, responsive, one page Bootstrap theme. -->
+                <!-- <br>Created by Start Bootstrap.</p> -->
+                {% block body %}{% endblock %}
+              <!-- <a href="#about" class="btn btn-circle js-scroll-trigger">
+                <i class="fa fa-angle-double-down animated"></i>
+              </a> -->
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <br><br><br><br><br>
+        <!-- Footer -->
+    <hr>
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Foodie 2018</p>
+      </div>
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/jquery-1.12.4.js')}}"></script> -->
+    <!-- <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> -->
+    
+    <script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/dataTables.bootstrap4.js')}}"></script> -->
+    
+
+    <script src="{{url_for('static', filename='js/admin-table.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/sb-admin-datatables.min.js')}}"></script> -->
+
+    <!-- <script src="{{url_for('static', filename='js/login.js')}}"></script> -->
+      
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <!-- <script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script> -->
+
+    <!-- <script src="{{url_for('static', filename='js/dataTables.fixedColumns.min.js')}}"></script> -->
+
+  </body>
+
+</html>

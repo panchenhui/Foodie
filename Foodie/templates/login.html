@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="/static/css/login.css" >
+<title>Sign In  </title>
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+ 
+
+<form action="/login" method="POST">
+  <div class="login">
+    <div class="login-screen">
+
+     <div class='row' >
+      <img src="static/img/logo6.png" style="margin-left: 60;" height="120" width="180">
+      </div>
+      <div class="app-title">
+        <h1>Sign In</h1>
+      </div>
+      <div class="login-form" >
+        <div class="control-group" style="text-align: center;" style="margin-bottom: 10px;">
+        <input type="text" class="login-field" value="" placeholder="Username" name="username">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+ 
+        <div class="control-group">
+        <input type="password" class="login-field" value="" placeholder="Password" name="password">
+        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+          <input type="submit" value="Log in" class="btn_log btn-primary btn-md btn-block" style="width: 250px; margin: 0 auto;" >
+          <!-- <input type="submit" value="Register" class="btn_log btn-primary btn-sm btn-block" > -->   
+          <a>Don't have an account?</a>
+          <a class= "btn" href="{{ url_for('register') }}">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br>
+ 
+{% endif %}
+{% endblock %}

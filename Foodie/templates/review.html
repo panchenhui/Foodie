@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}Search{% endblock %}
+{% block body %}
+    <br><br><br> <br><br><br> <br><br><br>
+    <div class="container text-center " >
+    <form action="", method="POST">
+        <div class="form-group" >
+            <input type="text" class="form-control" id="" placeholder="Write down" name="review_submit">
+        </div>
+        <button type="submit" class="btn btn-default">Submit Review</button>
+    </form>
+    <br><br><br>
+    <p>"{{ rev }}"</p>
+    <br><br><br>
+    {% if ( feedback == True) %}
+        <img src="static/img/smile.jpg">
+    {% endif %}
+    {% if ( feedback == False)%}
+        <img src="static/img/sad.jpg" >
+    {% endif %}
+    <br><br><br>
+    </div>
+     <br><br><br> <br><br><br> <br><br><br>
+{% endblock %}

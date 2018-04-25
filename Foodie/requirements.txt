@@ -1,0 +1,12 @@
+flask
+jinja2
+python-firebase
+gunicorn
+requests
+flask-login
+flask_googlemaps
+datetime
+pandas
+numpy
+scipy
+sklearn

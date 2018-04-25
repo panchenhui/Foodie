@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}About{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/about.css')}}" />
+      <!-- Introduction Row -->
+      <h4 class="my-4">Meet the Team</h4>
+
+  <div class="row col-lg-12">
+   <div class="column col-lg-6">
+    <div class="card">
+      <img src="static/img/chenhui.jpg" alt="Chenhui Pan" style="width: 100%">
+      <div class="container">
+        <h2>Chenhui Pan</h2>
+        <p class="title">Web Developer</p>
+<!--         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p> -->
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="column col-lg-6">
+    <div class="card ">
+      <img src="static/img/JianhengHou.jpg" alt="Jianheng Hou" style="width: 100%" >
+      <div class="container">
+        <h2>Jianheng Hou</h2>
+        <p class="title">Data Analyst</p>
+<!--         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p> -->
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+{% endblock %}

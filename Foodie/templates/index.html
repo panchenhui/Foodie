@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block title %}Foodie{% endblock %}
+{% block body %}
+
+<br><br>
+    <div class="center_div col-lg-12">
+   		<div class="container text-center " >
+   			<img src="static/img/logo6.png" width="480">
+        	<!-- <h1 class="display-1" style="color: black">FOODIE</h1><br> -->
+            <form id="form" action="{{ url_for('show_results') }}" method="POST" enctype="multipart/form-data">
+				<div class="container center_div col-xs-10 col-lg-10">
+					<div class="input-group">
+						<input type="text" class="form-control input-lg" placeholder="burgers, sushi, barbeque..." name="search" id="txtSearch"/>
+				        <a><input type="submit" value="Search" class="btn btn-primary btn-large btn-block" /></a>
+					</div>
+				</div>
+	    </div>
+    </div >
+<!-- 
+    <div class="container text-center " >
+	    <div class="row">
+	    	<div class="col-sm-4">
+	      		<h3>Search</h3>
+	      		<p>Seach whatever you like</p>
+	    	</div>
+
+	    	<div class="col-sm-4">
+	      		<h3>Recommend</h3>
+	      		<p>Deliver the optimal recommendation</p>
+	    	</div>
+
+	   		 <div class="col-sm-4">
+	      		<h3>Enjoy</h3>        
+	      		<p>Enjoy the food</p>
+	    </div>
+    </div> -->
+</div>
+<br><br><br><br><br>
+
+{% endblock %}

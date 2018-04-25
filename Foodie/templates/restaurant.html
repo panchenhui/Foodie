@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% extends 'layout.html' %}
+{% block title %}{{name}}{% endblock %}
+{% block body %}
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 center_div">
+			<h2 id="name">{{name}}</h2>
+			{% for d in range(ratings|int) %}
+			<span class="fa fa-star checked" style="color: orange"></span>
+			{% endfor %}
+			<p style="color: blue">{{categories}}</p>
+		</div>
+	</div>
+
+	<div class="row center_div" >
+		<div class="col-lg-7" style="float:right;">	
+			<img src="https://maps.googleapis.com/maps/api/streetview?size=450x250&location={{address}}{{city}}{{state}}" alt="street view of {{name}}">
+			<br><br>
+
+		</div>
+
+		<div class="col-lg-5 center_div" >
+			<h6 style="color: green">Attributes:</h6>
+			{% for a in attributes[0:10] %}
+				<div>{{a}}</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="row center_div">
+		<div class="col-lg-7 center_div" >	
+			<span>{{address}}</span>
+			<br>
+			<span>{{city}}, {{state}}, {{postal_code}}</span>
+			{{googlemap("my_awesome_map", style= "height:400px;width:450px", lat=lat, lng=longi, markers=[(lat, longi)])}}
+		</div>
+
+		<div class="col-lg-4 center_div " >
+			<br><br>
+			<div class="jumbotron" style="width: 250 ">
+				<h6 style="color: red">Hours:</h6>
+				{% for h in hours %}
+					<p>{{h}}</p>
+				{% endfor %}
+			</div>
+	
+		</div>
+	</div>
+
+	<p>Here are some words would provide postive feedback: </p>
+   	
+    <p>{{pos_words}}</p>
+
+	<div class="container text-center " >
+        <form action="", method="POST">
+            <div class="form-group" >
+                <input placeholder="Your ratings (1-5)" name="rating" rows="3" cols="10" id="comments"></input>
+                <br>
+                <input type="text" class="form-control" id="" placeholder="Leave your comments here..." name="sss">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+    </div>
+    </form>
+     <br><br>
+    <p>Here is your review: "{{ text }}"</p>
+    <br>
+    {% if feedback_emoji == True %}
+	<p>You feedback is <b style="color: red;">Positive</b> ! 😊</p>
+
+    {% endif %}
+    {% if ( feedback_emoji== False)%}
+    <p>You feedback is <b style="color: red;">Negative</b> ! 🙁</p>
+    <img src='static/img/sad.jpg' >
+    {% endif %}
+
+ </div>
+	</div>
+
+
+</div>
+
+</div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0_0YF6CqoeTD5EpRBYBLPoeMYRXvjfk8&callback=initMap">
+    </script>
+{% endblock %}
