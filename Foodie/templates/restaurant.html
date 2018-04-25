@@ -50,24 +50,17 @@
 		</div>
 	</div>
 
-	<p>Here are some words would provide postive feedback: </p>
-   	
-    <p>{{pos_words}}</p>
-
 	<div class="container text-center " >
         <form action="", method="POST">
             <div class="form-group" >
                 <input placeholder="Your ratings (1-5)" name="rating" rows="3" cols="10" id="comments"></input>
                 <br>
-                <input type="text" class="form-control" id="" placeholder="Leave your comments here..." name="sss">
+                <textarea type="text" class="form-control" id="" placeholder="Leave your comments here..." name="sss"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit Review</button>
         </form>
     </div>
     </form>
-     <br><br>
-    <p>Here is your review: "{{ text }}"</p>
-    <br>
     {% if feedback_emoji == True %}
 	<p>You feedback is <b style="color: red;">Positive</b> ! 😊</p>
 
