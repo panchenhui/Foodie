@@ -1,5 +1,5 @@
-# Foodie - INF Project
-This is the project for the course INF.
+# Foodie - INF551 Project
+This is the project for the course INF551.
 ---
 
 ## How to run
